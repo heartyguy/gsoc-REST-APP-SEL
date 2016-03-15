@@ -1,6 +1,6 @@
-# REST-API-Using-Flask
+# gsoc-REST-APP-SEL
 
-## Installation Instructions
+## Install
 
 Create a directory to hold the project
 
@@ -9,7 +9,7 @@ Create a directory to hold the project
 
 Clone the directory 
 
-    git clone https://github.com/heartyguy/REST-API-Using-Flask-
+    git clone https://github.com/heartyguy/gsoc-REST-APP-SEL.git
 
 # Go to the directory 
 
