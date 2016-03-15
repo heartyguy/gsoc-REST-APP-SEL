@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Some Styling for the Table (taken from w3schools) --> 
+<style> 
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('membersCtrl', function($scope, $http) {
+  $http.get("http://localhost:5000/index.html").then(function (response) { 
+      $scope.myData = response.data.objects;
+  });
+});
+</script>
+<body>
+
+<div ng-app="myApp" ng-controller="membersCtrl"> 
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Phone Number</th>
+  </tr>
+  <tr ng-repeat="x in myData" >
+    <td align="center">{{x.name|angular}}</td>
+    <td align="center">{{x.phone|angular}}</td>
+  </tr>
+</table>
+
+
+</div>
+
+
+
+</body>
+</html>
